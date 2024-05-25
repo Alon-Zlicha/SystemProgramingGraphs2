@@ -58,6 +58,17 @@ TEST_CASE("Test comparison")
     g.loadGraph(graph6);
     flag = g < g1;
     CHECK(flag == true);
+    vector<vector<int>> graph7 = {
+        {2, 0, 1},
+        {1, 1, 1},
+        {1, 1, 1}};
+    g1.loadGraph(graph7);
+    flag = g1 > g;
+    CHECK(flag == false);
+    flag = g1 >= g;
+    CHECK(flag == false);
+    flag = g != g1;
+    CHECK(flag == true);
 }
 TEST_CASE("Test graph addition")
 {
